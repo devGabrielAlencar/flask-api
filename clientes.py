@@ -17,7 +17,8 @@ def view_clientes(page: ft.Page):
         lista_clientes_container.controls.clear()
 
         try:
-            response = requests.get("http://localhost:5000/clientes")
+            response = requests.get(
+                "https://crm-api-gabriel.herokuapp.com/clientes")
             if response.status_code == 200:
                 dados = response.json()
                 clientes.clear()
@@ -174,7 +175,7 @@ def view_clientes(page: ft.Page):
 
             try:
                 response = requests.post(
-                    "http://localhost:5000/clientes", json=cliente)
+                    "https://crm-api-gabriel.herokuapp.com/clientes", json=cliente)
 
                 if response.status_code == 201:
                     page.snack_bar = ft.SnackBar(
