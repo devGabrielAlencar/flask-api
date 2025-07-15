@@ -2,10 +2,10 @@ import mysql.connector
 
 
 db_config = {
-    'host': "localhost",
+    'host': "hopper.proxy.rlwy.net",
     'user': "root",
-    'password': "ga1998",
-    'database': "crm"
+    'password': "faCZvVtZmATsvTcRCbKWxlfcdODKNmIk",
+    'database': "railway"
 }
 
 
@@ -32,7 +32,7 @@ def adicionar_clientes(cliente):
         cliente.get("endereco"),
         cliente.get("bairro"),
         cliente.get("telefone"),
-        cliente.get("suco"),
+        cliente.get("suco_preferido"),
         cliente.get("obs", "")
     )
 
