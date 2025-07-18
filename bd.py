@@ -1,11 +1,13 @@
+import os
 import mysql.connector
 
-
 db_config = {
-    'host': "hopper.proxy.rlwy.net",
-    'user': "root",
-    'password': "faCZvVtZmATsvTcRCbKWxlfcdODKNmIk",
-    'database': "railway"
+    'host': os.getenv("DB_HOST"),
+    'user': os.getenv("DB_USER"),
+    'password': os.getenv("DB_PASSWORD"),
+    'database': os.getenv("DB_NAME"),
+    # Usa 3306 se DB_PORT não estiver definida
+    'port': int(os.getenv("DB_PORT", 3306))
 }
 
 
@@ -23,8 +25,8 @@ def adicionar_clientes(cliente):
     conexao = mysql.connector.connect(**db_config)
     cursor = conexao.cursor()
     sql = """
-        INSERT INTO clientes (nome,endereco,bairro,telefone,suco_preferido,obs)
-        VALUES(%s,%s,%s,%s,%s,%s)
+        INSERT INTO clientes (nome, endereco, bairro, telefone, suco_preferido, obs)
+        VALUES (%s, %s, %s, %s, %s, %s)
     """
 
     valores = (
