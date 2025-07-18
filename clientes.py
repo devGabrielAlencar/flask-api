@@ -18,7 +18,7 @@ def view_clientes(page: ft.Page):
 
         try:
             response = requests.get(
-                "https://flask-api-abc123.onrender.com/clientes")
+                "https://flask-api-sam4.onrender.com/clientes")
             if response.status_code == 200:
                 dados = response.json()
                 clientes.clear()
@@ -175,7 +175,7 @@ def view_clientes(page: ft.Page):
 
             try:
                 response = requests.post(
-                    "https://flask-api-abc123.onrender.com/clientes", json=cliente)
+                    "https://flask-api-sam4.onrender.com/clientes", json=cliente)
 
                 if response.status_code == 201:
                     page.snack_bar = ft.SnackBar(
