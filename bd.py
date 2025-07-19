@@ -10,7 +10,7 @@ db_config = {
     'password': os.getenv("DB_PASSWORD"),
     'database': os.getenv("DB_NAME"),
     # Usa 3306 se DB_PORT não estiver definida
-    'port': int(os.getenv("DB_PORT"))
+    'port': int(os.getenv("DB_PORT") or 3306)
 }
 
 
