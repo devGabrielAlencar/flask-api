@@ -85,7 +85,7 @@ def view_clientes(page: ft.Page):
         tipo_suco = ft.Dropdown(
             label="Tipo de suco preferido",
             width=400,
-            value=cliente["suco"],
+            value=cliente["suco_preferido"],
             options=[
                 ft.dropdown.Option("Laranja"),
                 ft.dropdown.Option("Uva"),
@@ -109,7 +109,7 @@ def view_clientes(page: ft.Page):
                 "endereco": endereco.value,
                 "bairro": bairro.value,
                 "telefone": telefone.value,
-                "suco": tipo_suco.value,
+                "suco_preferido": tipo_suco.value,
                 "obs": observacoes.value,
             }
             formulario_container.controls.clear()
@@ -169,7 +169,7 @@ def view_clientes(page: ft.Page):
                 "endereco": endereco.value,
                 "bairro": bairro.value,
                 "telefone": telefone.value,
-                "suco": tipo_suco.value,
+                "suco_preferido": tipo_suco.value,
                 "obs": ""
             }
 
